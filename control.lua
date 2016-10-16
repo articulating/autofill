@@ -1,6 +1,6 @@
 require "defines"
 require "util"
-
+require "loader"
 MOD = { NAME = "Autofill", IF = "af" }
 
   local order = { 
@@ -21,7 +21,6 @@ local vanilla-sets {
   ["gun-turret"]= {priority=order.default, group="turrets", limits= {10}, "ammo-bullets" }
 }
 
-require "loader"
 local vanilla-items = {
   ["ammo-bullets"] = {"piercing-bullet-magazine", "basic-bullet-magazine"},
   ["ammo-rockets"] = {"rocket", "explosive-rocket"},
@@ -31,17 +30,6 @@ local vanilla-items = {
 }
 loader.addItemArray "settings/vanilla-items"
 loader.addSets "settings/vanilla-sets"
-loader.addSets "settings/bob-sets"
-loader.addSets "settings/farl-sets"
-loader.addSets "settings/color-coding-sets"
-loader.extendItemArray "settings/ammobox-items"
-loader.addSets "settings/ammobox-sets"
-loader.addSets "settings/yuoki-ind-sets"
-loader.extendItemArray "settings/aircraft-items"
-loader.addSets "settings/aircraft-sets"
-loader.addSets "settings/5dim-sets"
-
-
 
 --flying text colors
 local RED = {r = 0.9}
