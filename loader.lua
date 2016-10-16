@@ -5,8 +5,7 @@ local wildcardsets_backup = {}
 local backup_log = {MOD.NAME .." loader log:"}
 
 loader = {
-  addItemArray = function(path)
-    local tbl = require(path)
+  addItemArray = function(tbl)
     for name, array in pairs(tbl) do
       if item_arrays_backup[name] == nil then
         item_arrays_backup[name] = array
@@ -36,8 +35,7 @@ loader = {
     end
   end,
 
-  addSets = function(path)
-    local tbl = require(path)
+  addSets = function(tbl)
     local wildcards = 0
     for name, set in pairs(tbl) do
       name, wildcards = name:gsub("*",".+")
